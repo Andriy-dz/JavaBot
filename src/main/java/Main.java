@@ -87,11 +87,11 @@ public class Main extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
         Message message = update.getMessage();
-        //if( User.id is in base){something}   в нас ше нема бази
+        //if( User.id is in base){}   в нас ше нема бази
 
         //else:
         Registers registers = new Registers();
-        i = registers.onUpdateReceived(update, i);
+        i = registers.regester(update, i);
     }
 
     @Override
