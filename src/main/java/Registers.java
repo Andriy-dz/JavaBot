@@ -7,7 +7,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 public class Registers extends Main {
     KeyBoards keyBoards = new KeyBoards();
 
-    public int onUpdateReceived(Update update, int i) {
+    public int regester(Update update, int i) {           // і - це для рахунку кроків, шо спершу вітання, потім другий крок це мова і т д
         Main main = new Main();
         Message message = update.getMessage();
         if (message != null && message.hasText()) {
@@ -222,8 +222,8 @@ public class Registers extends Main {
             } else if (i == 7) {
                 switch (message.getText()) {
                     case "10":
-                        super.sendMsg(message, "Введіть годину в такому форматі: \"21:10\"", "OnlyMessage");
-                        i = 5;
+                        super.sendMsg(message, "Реєстрація пройшла успішно", "OnlyMessage");
+                        i = 0;
                         return i;
 
                     case "Ввести вручну":
