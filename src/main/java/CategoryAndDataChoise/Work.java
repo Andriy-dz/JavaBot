@@ -1,3 +1,6 @@
+package CategoryAndDataChoise;
+
+import CategoryAndDataChoise.KeyBoardCategoryDataChoise;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -26,7 +29,8 @@ public class Work extends Registers {
                 case "5":
                     //Я хочу побачити зараз повідомлення моїх категорій
                 case "6":
-                    
+                    //я хочу бачити свої новини своїх
+                    //категорій іншими днями годинами
                     switch(message.getText()){
                         case "Data":
                             SendMessage sendMessage;
@@ -96,17 +100,19 @@ public class Work extends Registers {
                                 e.printStackTrace();
                             }
                             break;
-                        case "setButtonChoiseElse":
-                            try {
-                                keyBoardCategoryDataChoise.setButtonChoiseElse(sendMessage);
-                                execute(sendMessage);
-                            } catch (TelegramApiException e) {
-                                e.printStackTrace();
-                            }
 
                         case "Time":
                             try {
                                 keyBoardCategoryDataChoise.setButtonTime(sendMessage);
+                                execute(sendMessage);
+                            } catch (TelegramApiException e) {
+                                e.printStackTrace();
+                            }
+                            break;
+
+                        case "setButtonTimeChoiseElse":
+                            try {
+                                keyBoardCategoryDataChoise.setButtonTimeChoiseElse(sendMessage);
                                 execute(sendMessage);
                             } catch (TelegramApiException e) {
                                 e.printStackTrace();
